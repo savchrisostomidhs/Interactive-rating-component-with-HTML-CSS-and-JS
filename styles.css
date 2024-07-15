@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Orange: hsl(25, 97%, 53%);
+  --White: hsl(0, 0%, 100%);
+  --Light-Grey: hsl(217, 12%, 63%);
+  --Dark-Blue: hsl(213, 19%, 18%);
+  --Very-Dark-Blue: hsl(216, 12%, 8%);
+}
+
+body {
+  background-color: var(--Very-Dark-Blue);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Overpass;
+}
+
+/* Rating State */
+
+.ratingstate {
+  max-width: 25%;
+  min-height: 55%;
+  padding: 25px;
+  border-radius: 20px;
+  background-color: hsla(213, 19%, 18%, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* display: none; */
+}
+
+/* Image */
+
+.ratingstate div.image {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: var(--Dark-Blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.ratingstate div.image img {
+  width: 15px;
+  height: 15px;
+}
+
+/* Header */
+
+.ratingstate>h2 {
+  color: var(--White);
+}
+
+/* Paragraph */
+
+.ratingstate>p {
+  margin-top: -15px;
+  color: var(--Light-Grey);
+  line-height: 20px;
+  font-size: 14px;
+}
+
+/* Radio Buttons */
+
+.ratingstate .rating {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--Dark-Blue);
+}
+
+label {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.ratingstate .radio {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.ratingstate label span {
+  position: relative;
+  top: -35px;
+  left: 15px;
+  font-size: 15px;
+  color: var(--Light-Grey);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+input[type="radio"] {
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+input[type="radio"]:focus {
+  outline: none;
+}
+
+input[type="radio"]:checked {
+  background-color: var(--White);
+}
+
+input[type="radio"]:checked+span {
+  color: var(--Dark-Blue);
+}
+
+.ratingstate label:hover input {
+  background-color: var(--Orange);
+}
+
+.ratingstate label:hover span {
+  color: var(--Dark-Blue);
+}
+
+/* Submit */
+
+.ratingstate button {
+  width: 100%;
+  background: var(--Orange);
+  border: none;
+  height: 35px;
+  border-radius: 20px;
+  margin-top: 20px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: Overpass;
+}
+
+.ratingstate button:hover {
+  background-color: var(--White);
+  color: var(--Dark-Blue);
+}
+
+/* Thank you State */
+
+.tystate {
+  max-width: 25%;
+  min-height: 55%;
+  padding: 25px;
+  border-radius: 20px;
+  background-color: hsla(213, 19%, 18%, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  display: none;
+}
+
+/* Image */
+
+.tystate img {
+  width: 162px;
+  height: 108px;
+}
+
+.tystate .selected {
+  background-color: var(--Dark-Blue);
+  border-radius: 20px;
+  padding: 5px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.tystate .selected>p {
+  color: var(--Orange);
+  font-size: 12px;
+}
+
+/* Header */
+
+.tystate h2 {
+  color: var(--White);
+  margin-bottom: -20px;
+}
+
+/* Paragraph */
+
+.tystate p {
+  color: var(--Light-Grey);
+  font-size: 14px;
+  text-align: center;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  display: none;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 600px) {
+
+  .ratingstate,
+  .tystate {
+    max-width: fit-content;
+    margin: 0 50px 0 20px;
+  }
+
+  .tystate .selected {
+    width: fit-content;
+  }
+}
